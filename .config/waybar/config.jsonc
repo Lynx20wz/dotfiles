@@ -1,0 +1,99 @@
+{
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 25, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 4,
+  "modules-left": ["custom/yandex", "hyprland/workspaces"],
+  "modules-right": ["network", "pulseaudio", "clock", "hyprland/language", "tray"],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "9": "♫",
+      "urgent": "",
+      "active": "●",
+      "default": "○",
+    },
+  },
+  "custom/yandex": {
+    "format": "{}",
+    "escape": true,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "playerctl metadata --format '♫ {{artist}} - {{title}}' 2>/dev/null",
+    "tooltip": false,
+    "interval": 1,
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "🇺🇸",
+    "format-ru": "🇷🇺",
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{essid}",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) \n{ipaddr}\n{gwaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 5,
+    "consume-icons": {
+      "on": " ",
+    },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " ",
+    },
+    "repeat-icons": {
+      "on": " ",
+    },
+    "single-icons": {
+      "on": "1 ",
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": "",
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+  },
+  "tray": {
+    "spacing": 10,
+  },
+  "clock": {
+    "format": "{:%I:%M:%S%p}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip-format": "<big>{:%H:%M:%S}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1,
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}  {volume}% {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+}

@@ -1,0 +1,96 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-b": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-/": null,
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-/": "editor::MoveToEnclosingBracket",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-\\": null,
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-k ctrl-c": null,
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-j": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-j": null,
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-`": "terminal_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-c": "terminal::Copy"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-v": "terminal::Paste"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-v": null
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-c": [
+        "terminal::SendKeystroke",
+        "ctrl-c"
+      ]
+    }
+  }
+]

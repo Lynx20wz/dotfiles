@@ -1,0 +1,151 @@
+{
+  "excerpt_context_lines": 4,
+  "ui_font_family": "Monaspace Argon NF",
+  "buffer_font_weight": 400.0,
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "ollama",
+      "model": "gpt-oss",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "qwen3-coder",
+          "max_tokens": 25000,
+          "display_name": "Coder",
+          "supports_tools": true,
+          "keep_alive": 30,
+        },
+        {
+          "name": "gpt-oss",
+          "max_tokens": 15000,
+          "display_name": "GPT",
+          "supports_tools": true,
+          "keep_alive": 30,
+        },
+      ],
+    },
+  },
+  "snippet_sort_order": "top",
+  "indent_guides": {
+    "coloring": "indent_aware",
+  },
+  "languages": {
+    "Python": {
+      "inlay_hints": {
+        "enabled": true
+      },
+      "format_on_save": "on",
+      "indent_guides": {
+        "coloring": "indent_aware",
+        "background_coloring": "disabled",
+      },
+    },
+  },
+  "auto_signature_help": false,
+  "show_signature_help_after_edits": true,
+  "always_treat_brackets_as_autoclosed": false,
+  "colorize_brackets": true,
+  "redact_private_values": false,
+  "relative_line_numbers": "disabled",
+  "allow_rewrap": "in_comments",
+  "preferred_line_length": 91,
+  "show_wrap_guides": true,
+  "edit_predictions": {
+    "mode": "subtle",
+  },
+  "horizontal_scroll_margin": 1.0,
+  "scrollbar": {
+    "axes": {
+      "horizontal": true,
+    },
+  },
+  "toolbar": {
+    "code_actions": true,
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "terminal": {
+    "shell": {
+      "program": "nu",
+    },
+    "font_size": 28.0,
+    "cursor_shape": "bar",
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+  "base_keymap": "VSCode",
+  "sticky_scroll": {
+    "enabled": false,
+  },
+  "minimap": {
+    "show": "never",
+  },
+  "cursor_blink": true,
+  "autosave": "on_focus_change",
+  "buffer_font_family": "Monaspace Neon NF",
+  "soft_wrap": "editor_width",
+  "icon_theme": "Material Icon Theme",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 18.0,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Dark",
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "padding": 2,
+      "update_debounce_ms": 300,
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "completion": {
+          "snippits": {
+            "custom": {
+              "Enclose ok": {
+                "postfix": "ok",
+                "body": ["Ok(${receiver})"],
+                "scope": "expr",
+              },
+            },
+          },
+        },
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true,
+          },
+          "closureReturnTypeHints": {
+            "enable": "always",
+          },
+        },
+      },
+    },
+    "basedpyright": {
+      "settings": {},
+    },
+  },
+}

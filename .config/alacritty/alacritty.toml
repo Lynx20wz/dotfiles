@@ -1,0 +1,15 @@
+[terminal.shell]
+program = "tmux"
+
+[keyboard]
+bindings=[
+  { key = 'V', mods = 'Control', action = 'Paste' },
+  { key = 'C', mods = 'Control', action = 'Copy' },
+  { key = 'C', mods = 'Control|Shift', action = 'ReceiveChar'},
+]
+
+[cursor]
+style = {shape = "Beam", blinking="On"}
+
+[font]
+normal = {family = "Monaspace Neon NF"}
