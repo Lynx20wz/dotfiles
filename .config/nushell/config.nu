@@ -117,3 +117,32 @@ def mdf [
         name: $target_name
     }
 }
+
+def zed-ext [link: string, --force (-f)] {
+    let target = $"($env.HOME)/.dotfiles/.config/zed/ext/"
+    if ($target | path exists) and (not $force) {
+        error make {
+            msg: $"Directory already exists in ($target)"
+            label: {
+                text: "Use --force to overwrite"
+                span: (metadata $link).span
+            }
+        }
+    }
+
+    if ($target | path exists) and $force {
+        rm -rf $target
+    }
+
+    mkdir $target
+    echo $target
+
+    let tmp_file = (mktemp)
+    curl -sL $"($link)/archive/refs/heads/main.zip" -o $tmp_file
+
+    unzip -q $tmp_file -d $target
+
+    rm $tmp_file
+
+    echo $"✅ ($link | path parse | get stem) has been installed"
+}

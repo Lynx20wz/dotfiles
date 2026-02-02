@@ -6,14 +6,14 @@
   "spacing": 4,
   "modules-left": ["custom/yandex", "hyprland/workspaces"],
   "modules-right": ["network", "pulseaudio", "clock", "hyprland/language", "tray"],
-  // Modules configuration
   "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "DP-1": [1, 2, 3, 4],
+    },
     "format": "{icon}",
     "format-icons": {
+      "1": "󰖟",
       "9": "♫",
-      "urgent": "",
-      "active": "●",
-      "default": "○",
     },
   },
   "custom/yandex": {
