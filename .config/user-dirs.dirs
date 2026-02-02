@@ -1,0 +1,8 @@
+XDG_DESKTOP_DIR="$HOME/Desktop"
+XDG_DOCUMENTS_DIR="/run/media/lynx20wz/Lynx20wz/documents"
+XDG_DOWNLOAD_DIR="/run/media/lynx20wz/Lynx20wz/downloads"
+XDG_MUSIC_DIR="/run/media/lynx20wz/Lynx20wz/music"
+XDG_PICTURES_DIR="/run/media/lynx20wz/Lynx20wz/pictures"
+XDG_PUBLICSHARE_DIR="$HOME/Public"
+XDG_TEMPLATES_DIR="$HOME/Templates"
+XDG_VIDEOS_DIR="/run/media/lynx20wz/Lynx20wz/videos"

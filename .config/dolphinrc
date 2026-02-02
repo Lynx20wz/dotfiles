@@ -1,0 +1,41 @@
+MenuBar=Disabled
+
+[ExtractDialog]
+2560x1440 screen: Window-Maximized=true
+DirHistory[$e]=/run/media/lynx20wz/games/
+
+[General]
+BrowseThroughArchives=true
+ConfirmClosingMultipleTabs=false
+DoubleClickViewAction=open_terminal
+DynamicView=true
+EditableUrl=true
+GlobalViewProps=false
+OpenExternallyCalledFolderInNewTab=true
+RememberOpenedTabs=false
+ShowFullPath=true
+ShowStatusBar=Disabled
+Version=202
+ViewPropsTimestamp=2026,1,15,19,36,36.594
+
+[IconsMode]
+MaximumTextLines=2
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=16
+
+[MainWindow]
+MenuBar=Disabled
+
+[PlacesPanel]
+IconSize=16
+
+[PreviewSettings]
+Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,glycin-heif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsf-office,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,glycin-svg,svgthumbnail,ffmpegthumbs
+
+[UiSettings]
+ColorScheme=BreezeDark
+
+[VersionControl]
+enabledPlugins=Git

@@ -6,6 +6,7 @@ $env.config.buffer_editor = "zeditor"
 # commands
 alias gcl = git clone
 alias clr = clear
+alias hypr-exec = hyprctl dispatch exec
 
 # package manager
 alias pac = sudo pacman -S
@@ -116,5 +117,3 @@ def mdf [
         name: $target_name
     }
 }
-
-source $"~/.cargo/env.nu"
