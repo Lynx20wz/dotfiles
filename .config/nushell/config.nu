@@ -20,7 +20,7 @@ alias yar = yay -Rns
 # programs
 alias zed = zeditor
 alias ff = fastfetch
-alias rgit = relagit
+alias lg = lazygit
 
 # paths
 alias conf! = cd ~/.config
@@ -145,4 +145,13 @@ def zed-ext [link: string, --force (-f)] {
     rm $tmp_file
 
     echo $"✅ ($link | path parse | get stem) has been installed"
+}
+
+# check https://github.com/TheThingILearn/SDK-Emulator
+
+# Flutter in zed with hot reload.
+def fz [] {
+    fvm flutter run --pid-file /tmp/flutter.pid;
+    let watch_dir = pwd
+    ^find pwd -type f | entr -r bash -c "kill -s 10 $(cat /tmp/flutter.pid)"
 }
