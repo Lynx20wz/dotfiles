@@ -16,6 +16,7 @@ alias yai = yay -S --needed --noconfirm
 alias yas = yay -Ss
 alias yau = yay -Suy --noconfirm
 alias yar = yay -Rns
+alias yarc = yay -Ycc
 
 # programs
 alias zed = zeditor
