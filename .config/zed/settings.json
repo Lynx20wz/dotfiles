@@ -44,7 +44,7 @@
       ],
     },
   },
-  "snippet_sort_order": "top",
+  "snippet_sort_order": "bottom",
   "indent_guides": {
     "coloring": "indent_aware",
   },
@@ -61,7 +61,7 @@
     },
   },
   "auto_signature_help": false,
-  "show_signature_help_after_edits": true,
+  "show_signature_help_after_edits": false,
   "always_treat_brackets_as_autoclosed": false,
   "colorize_brackets": true,
   "redact_private_values": false,

@@ -102,7 +102,7 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_red)]($style)'
 [python]
 symbol = ""
 # style = "bg:color_red"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = '[[ $symbol( $version) \($virtualenv\) ](fg:color_fg0 bg:color_yellow)]($style)'
 
 [dart]
 symbol = "🎯"

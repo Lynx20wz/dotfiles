@@ -1,0 +1,15 @@
+[SddmGreeterTheme]
+Name=lynx-sddm
+Description=lynx-sddm
+Author=lynx20wz
+Website=https://github.com/Keyitdev/sddm-astronaut-theme
+License=GPL-3.0-or-later
+Type=sddm-theme
+Version=1.0
+ConfigFile=lynx.conf
+Screenshot=preview.png
+MainScript=Main.qml
+TranslationsDirectory=translations
+Theme-Id=lynx-sddm
+Theme-API=2.0
+QtVersion=6

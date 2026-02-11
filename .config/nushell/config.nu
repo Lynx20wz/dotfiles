@@ -7,6 +7,7 @@ $env.config.buffer_editor = "zeditor"
 alias gcl = git clone
 alias clr = clear
 alias hypr-exec = hyprctl dispatch exec
+alias venv = overlay use ./.venv/bin/activate.nu
 
 # package manager
 alias pac = sudo pacman -S
@@ -22,6 +23,7 @@ alias yarc = yay -Ycc
 alias zed = zeditor
 alias ff = fastfetch
 alias lg = lazygit
+alias rm = trash
 
 # paths
 alias conf! = cd ~/.config
@@ -153,6 +155,15 @@ def zed-ext [link: string, --force (-f)] {
 # Flutter in zed with hot reload.
 def fz [] {
     fvm flutter run --pid-file /tmp/flutter.pid;
+    hotreload
+}
+
+def hotreload [] {
     let watch_dir = pwd
-    ^find pwd -type f | entr -r bash -c "kill -s 10 $(cat /tmp/flutter.pid)"
+    ^find $watch_dir -type f | entr -r bash -c "kill -s 10 $(cat /tmp/flutter.pid)"
+}
+
+def adb-screen-off-timeout [timeout: int] {
+    let timeout = $timeout * 1000
+    adb shell settings put system screen_off_timeout
 }
