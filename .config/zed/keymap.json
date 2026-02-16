@@ -92,5 +92,23 @@
         "ctrl-c"
       ]
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-up": "editor::DuplicateLineUp"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-shift-up": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-down": "editor::DuplicateLineDown"
+    }
   }
 ]
