@@ -5,7 +5,14 @@
   // "width": 1280, // Waybar width
   "spacing": 4,
   "modules-left": ["hyprland/workspaces", "custom/music"],
-  "modules-right": ["network", "pulseaudio", "clock", "hyprland/language", "tray"],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "custom/audio",
+    "clock",
+    "hyprland/language",
+    "tray",
+  ],
   "hyprland/workspaces": {
     "persistent-workspaces": {
       "DP-1": [1, 9],
@@ -41,6 +48,14 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) \n{ipaddr}\n{gwaddr}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
+  },
+  "custom/audio": {
+    "exec": "~/documents/dotfiles/.config/waybar/audio-switcher.sh icon",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "~/documents/dotfiles/.config/waybar/audio-switcher.sh switch",
+    "tooltip": true,
+    "format": "{}",
   },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -78,20 +93,19 @@
     "interval": 1,
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}% {format_source}",
+    "scroll-step": 5, // %, can be a float
+    "format": "{icon}  {volume}%",
     "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": "",
+    "format-bluetooth-muted": "  {icon} {format_source}",
+    "format-muted": "  {format_source}",
+    // "format-source": " {volume}%",
+    // "format-source-muted": "",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
       "headset": "",
       "phone": "",
       "portable": "",
-      "car": "",
       "default": ["", "", ""],
     },
     "on-click": "pavucontrol",
