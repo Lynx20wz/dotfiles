@@ -1,0 +1,49 @@
+#!/usr/bin/nu
+
+# The monitoring-switch script is a simple utility to toggle the loopback module in PulseAudio.
+# Author: Lynx20wz
+
+const module_name = "module-loopback"
+
+def is_loaded [] {
+    pactl list short modules | grep $module_name | cut -f1 | into bool --relaxed
+}
+
+def load_module [] {
+    pactl load-module $module_name
+    notify-send -t 2000 "Monitoring Switch" "Monitoring is on 🎤"
+}
+
+def unload_modules [] {
+    pactl unload-module $module_name
+    notify-send -t 2000 "Monitoring Switch" "Monitoring is off 🔇"
+}
+
+def show_status [] {
+    if (is_loaded) { "on" } else { "off" }
+}
+
+def toggle_monitoring [] {
+    if (is_loaded) { unload_modules } else { load_module }
+}
+
+def main [arg?: string] {
+    match $arg {
+        "on" =>  load_module
+        "off" => unload_modules
+        "status" => show_status
+        "toggle" => toggle_monitoring
+        _ => help
+    }
+}
+
+def help [] {
+    echo $"Usage: ($env.CURRENT_FILE) {COMMAND}
+
+Available commands:
+    toggle - Toggle monitoring status
+    on - Enable monitoring
+    off - Disable monitoring
+    status - Show monitoring status
+    help - Show this help message"
+}
