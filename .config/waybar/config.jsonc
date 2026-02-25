@@ -1,18 +1,22 @@
 {
   // "layer": "top", // Waybar at top layer
   // "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 25, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
+  "height": 25, // Waybar height (to be removed for auto height)
   "spacing": 4,
   "modules-left": ["hyprland/workspaces", "custom/music"],
+  "modules-center": ["clock"],
   "modules-right": [
     "network",
     "pulseaudio",
     "custom/audio",
-    "clock",
+    "custom/obs",
+
     "hyprland/language",
     "tray",
   ],
+
+  // LEFT
   "hyprland/workspaces": {
     "persistent-workspaces": {
       "DP-1": [1, 9],
@@ -32,13 +36,11 @@
     "on-scroll-down": "playerctl previous",
     "exec": "playerctl metadata --format '♫ {{artist}} - {{title}}' 2>/dev/null",
     "tooltip": false,
-    "interval": 1,
+    "interval": 10,
+    "max-length": 50,
   },
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "🇺🇸",
-    "format-ru": "🇷🇺",
-  },
+
+  // RIGHT
   "network": {
     "format": "{ifname}",
     "format-wifi": "{essid}",
@@ -48,49 +50,6 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) \n{ipaddr}\n{gwaddr}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-  },
-  "custom/audio": {
-    "exec": "~/documents/dotfiles/.config/waybar/audio-switcher.sh icon",
-    "return-type": "json",
-    "interval": 1,
-    "on-click": "~/documents/dotfiles/.config/waybar/audio-switcher.sh switch",
-    "tooltip": true,
-    "format": "{}",
-  },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " ",
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " ",
-    },
-    "repeat-icons": {
-      "on": " ",
-    },
-    "single-icons": {
-      "on": "1 ",
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": "",
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)",
-  },
-  "tray": {
-    "spacing": 10,
-  },
-  "clock": {
-    "format": "{:%I:%M:%S%p}",
-    "format-alt": "{:%Y-%m-%d}",
-    "tooltip-format": "<big>{:%H:%M:%S}</big>\n<tt><small>{calendar}</small></tt>",
-    "interval": 1,
   },
   "pulseaudio": {
     "scroll-step": 5, // %, can be a float
@@ -109,5 +68,33 @@
       "default": ["", "", ""],
     },
     "on-click": "pavucontrol",
+  },
+  "custom/audio": {
+    "exec": "~/.dotfiles/.config/waybar/custom/audio-switcher.sh icon",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "~/.dotfiles/.config/waybar/custom/audio-switcher.sh switch",
+    "tooltip": true,
+    "format": "{}",
+  },
+  "custom/obs": {
+    "exec": "~/.dotfiles/.config/waybar/custom/obs.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 5,
+  },
+  "clock": {
+    "format": "{:%I:%M:%S%p}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip-format": "<big>{:%H:%M:%S}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1,
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "🇺🇸",
+    "format-ru": "🇷🇺",
+  },
+  "tray": {
+    "spacing": 10,
   },
 }

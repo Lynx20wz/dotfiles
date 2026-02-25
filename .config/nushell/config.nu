@@ -40,6 +40,10 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 source ~/.local/share/nushell/scripts/custom-completions/git/git-completions.nu
 
+def reload-waybar [] {
+    killall waybar; hypr-exec waybar
+}
+
 def exists [file] {
     if ($file | path exists) {
         echo $"✅ ($file) exists"
