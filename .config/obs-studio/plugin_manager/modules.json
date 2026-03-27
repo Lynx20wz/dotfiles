@@ -1,0 +1,15 @@
+[
+    {
+        "display_name": "",
+        "enabled": true,
+        "encoders": [],
+        "id": "",
+        "module_name": "source-record",
+        "outputs": [],
+        "services": [],
+        "sources": [
+            "source_record_filter"
+        ],
+        "version": ""
+    }
+]
