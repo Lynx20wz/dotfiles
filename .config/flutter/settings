@@ -1,0 +1,6 @@
+{
+  "android-sdk": "/home/lynx20wz/.local/lib/android-sdk/",
+  "enable-web": false,
+  "enable-macos-desktop": false,
+  "enable-ios": false
+}

@@ -4,3 +4,6 @@
 
 # temporarily
 .config/rofi
+
+/.config/obs-studio/logs/
+/.config/obs-studio/profiler_data/
