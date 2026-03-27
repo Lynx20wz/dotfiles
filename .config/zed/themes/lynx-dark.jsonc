@@ -31,9 +31,9 @@
           "function": {
             "color": "#49D6E9"
           },
-          "function.builtin": {
-            "color": "#49E9A6"
-          },
+          // "function.builtin": {
+          //   "color": "#49E9A6"
+          // },
           "type": {
             "color": "#49E9A6"
           },

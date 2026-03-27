@@ -1,4 +1,7 @@
 {
+  "git_panel": {
+    "tree_view": false,
+  },
   "agent_servers": {
     "qwen-code": {
       "type": "custom",
@@ -24,8 +27,9 @@
   "agent": {
     "default_profile": "write",
     "default_model": {
-      "provider": "lmstudio",
-      "model": "qwen3-coder-next",
+      "enable_thinking": true,
+      "provider": "ollama",
+      "model": "deepseek-r1:8b",
     },
     "favorite_models": [],
     "model_parameters": [],
@@ -56,7 +60,10 @@
   "preferred_line_length": 91,
   "show_wrap_guides": true,
   "edit_predictions": {
-    "mode": "subtle",
+    "mode": "eager",
+    "provider": "zed",
+    "ollama": { "model": "deepseek-coder:6.7b",
+                "prompt_format": "deepseek_coder" },
   },
   "horizontal_scroll_margin": 1.0,
   "scrollbar": {
