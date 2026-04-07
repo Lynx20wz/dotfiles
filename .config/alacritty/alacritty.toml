@@ -1,3 +1,6 @@
+[window]
+dynamic_padding = false
+
 [terminal.shell]
 program = "tmux"
 
@@ -13,3 +16,6 @@ style = {shape = "Beam", blinking="On"}
 
 [font]
 normal = {family = "Monaspace Neon NF"}
+
+[font.offset]
+y = -1
