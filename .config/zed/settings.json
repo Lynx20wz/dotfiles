@@ -15,10 +15,6 @@
     "mute_on_join": false,
   },
   "audio": {
-    "experimental.auto_speaker_volume": true,
-    "experimental.denoise": true,
-    "experimental.legacy_audio_compatible": true,
-    "experimental.rodio_audio": true,
     "experimental.auto_microphone_volume": true,
   },
   "excerpt_context_lines": 4,
@@ -62,8 +58,7 @@
   "edit_predictions": {
     "mode": "eager",
     "provider": "zed",
-    "ollama": { "model": "deepseek-coder:6.7b",
-                "prompt_format": "deepseek_coder" },
+    "ollama": { "model": "deepseek-coder:6.7b", "prompt_format": "deepseek_coder" },
   },
   "horizontal_scroll_margin": 1.0,
   "scrollbar": {
@@ -74,9 +69,7 @@
   "toolbar": {
     "code_actions": true,
   },
-  "outline_panel": {
-    "dock": "left",
-  },
+
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
@@ -105,7 +98,7 @@
   },
   "cursor_blink": true,
   "autosave": "on_focus_change",
-  "buffer_font_family": "Monaspace Neon NF",
+  "buffer_font_family": "Monaspace Argon NF",
   "soft_wrap": "editor_width",
   "icon_theme": "Material Icon Theme",
   "ui_font_size": 14.0,
