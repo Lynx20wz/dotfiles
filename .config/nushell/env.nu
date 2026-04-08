@@ -11,3 +11,4 @@ $env.PATH ++= [
     ~/.local/lib/android-sdk/emulator/
     ~/.cargo/bin/
 ]
+zoxide init nushell | save -f /run/media/lynx20wz/Lynx20wz/documents/dotfiles/.config/nushell/zoxide.nu

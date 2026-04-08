@@ -38,8 +38,6 @@ alias dart! = cd ~/documents/programming/dart
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
-source ~/.local/share/nushell/scripts/custom-completions/git/git-completions.nu
-
 def reload-waybar [] {
     killall waybar; hypr-exec waybar
 }
@@ -171,3 +169,8 @@ def adb-screen-off-timeout [timeout: int] {
     let timeout = $timeout * 1000
     adb shell settings put system screen_off_timeout
 }
+
+
+source ~/.local/share/nushell/scripts/custom-completions/git/git-completions.nu
+
+source ~/documents/dotfiles/.config/nushell/zoxide.nu
