@@ -38,7 +38,6 @@ window#waybar.hidden {
 }
 
 /* Эффект при наведении */
-#workspaces:hover,
 #window:hover,
 #tray:hover,
 #pulseaudio:hover,

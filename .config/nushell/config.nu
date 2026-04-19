@@ -6,6 +6,7 @@ $env.config.buffer_editor = "zeditor"
 # commands
 alias gcl = git clone
 alias clr = clear
+alias fr = flutter run
 alias hypr-exec = hyprctl dispatch exec
 alias venv = overlay use ./.venv/bin/activate.nu
 

@@ -8,9 +8,10 @@
   "modules-center": ["clock"],
   "modules-right": [
     "network",
+    // "custom/english",
     "pulseaudio",
     "custom/audio",
-    "custom/obs",
+    // "custom/obs",
 
     "hyprland/language",
     "tray",
@@ -39,6 +40,11 @@
     "interval": 10,
     "max-length": 50,
   },
+  // "custom/english": {
+  //   "format": "en",
+  //   "on-click": "~/.local/bin/english_flutter",
+  //   "tooltip": false,
+  // },
 
   // RIGHT
   "network": {
