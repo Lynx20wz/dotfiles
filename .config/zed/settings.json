@@ -1,5 +1,14 @@
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "cli_default_open_behavior": "new_window",
+  "mouse_wheel_zoom": true,
   "git_panel": {
+    "dock": "left",
     "tree_view": false,
   },
   "agent_servers": {
@@ -21,6 +30,7 @@
   "ui_font_family": "Monaspace Argon NF",
   "buffer_font_weight": 400.0,
   "agent": {
+    "dock": "right",
     "default_profile": "write",
     "default_model": {
       "enable_thinking": true,
@@ -81,7 +91,7 @@
     "shell": {
       "program": "nu",
     },
-    "font_size": 28.0,
+    "font_size": 22.0,
     "cursor_shape": "bar",
   },
   "git": {
@@ -100,13 +110,17 @@
   "autosave": "on_focus_change",
   "buffer_font_family": "Monaspace Argon NF",
   "soft_wrap": "editor_width",
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
+  },
   "ui_font_size": 14.0,
   "buffer_font_size": 18.0,
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
-    "dark": "Dark",
+    "dark": "One Dark",
   },
   "diagnostics": {
     "inline": {
