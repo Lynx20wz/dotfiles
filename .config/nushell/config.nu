@@ -48,7 +48,7 @@ def hypr-exec [command: string] {
 
 def reload-waybar [] {
     ^killall waybar
-    hyprctl dispatch hl.dsp.exec_cmd("waybar")
+    waybar
 }
 
 def exists [file] {
