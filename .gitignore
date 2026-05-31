@@ -7,3 +7,5 @@
 
 /.config/obs-studio/logs/
 /.config/obs-studio/profiler_data/
+/.config/obs-studio/plugin_config/obs-browser/**
+.config/obs-studio/.sentinel/**

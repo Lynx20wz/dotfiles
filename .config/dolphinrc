@@ -1,8 +1,14 @@
 MenuBar=Disabled
 
+[CompactMode]
+IconSize=22
+
+[DetailsMode]
+IconSize=22
+
 [ExtractDialog]
 2560x1440 screen: Window-Maximized=true
-DirHistory[$e]=/run/media/lynx20wz/games/
+DirHistory[$e]=/run/media/lynx20wz/games/Cold Waters/,/run/media/lynx20wz/games/SteamLibrary/steamapps/common/Euro Truck Simulator 2/,/run/media/lynx20wz/games/
 
 [General]
 BrowseThroughArchives=true
@@ -19,7 +25,9 @@ Version=202
 ViewPropsTimestamp=2026,1,15,19,36,36.594
 
 [IconsMode]
+IconSize=48
 MaximumTextLines=2
+PreviewSize=80
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
