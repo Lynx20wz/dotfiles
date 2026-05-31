@@ -1,13 +1,49 @@
 {
+  "diff_view_style": "unified",
+  "completion_menu_item_kind": "symbol",
+  "tabs": {
+    "file_icons": false,
+  },
+  "title_bar": {
+    "show_branch_status_icon": false,
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "fast_scroll_sensitivity": 3.0,
+  "scroll_sensitivity": 1.0,
+  "inlay_hints": {
+    "show_value_hints": true,
+    "show_background": false,
+    "show_other_hints": true,
+    "show_parameter_hints": false,
+    "enabled": true,
+  },
+  "completion_detail_alignment": "right",
+  "completion_menu_scrollbar": "never",
+  "completions": {
+    "words_min_length": 1,
+    "words": "enabled",
+  },
+  "inline_code_actions": true,
+  "gutter": {
+    "min_line_number_digits": 3,
+    "runnables": true,
+  },
+  "autoscroll_on_clicks": false,
+  "which_key": {
+    "enabled": false,
+  },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "cli_default_open_behavior": "new_window",
   "mouse_wheel_zoom": true,
   "git_panel": {
+    "sort_by_path": false,
     "dock": "left",
     "tree_view": false,
   },
@@ -30,12 +66,13 @@
   "ui_font_family": "Monaspace Argon NF",
   "buffer_font_weight": 400.0,
   "agent": {
+    "sidebar_side": "right",
     "dock": "right",
     "default_profile": "write",
     "default_model": {
-      "enable_thinking": true,
+      "enable_thinking": false,
       "provider": "ollama",
-      "model": "deepseek-r1:8b",
+      "model": "deepseek-coder:6.7b",
     },
     "favorite_models": [],
     "model_parameters": [],
@@ -45,6 +82,21 @@
     "coloring": "indent_aware",
   },
   "languages": {
+    "Markdown": {
+      "hard_tabs": false,
+      "tab_size": 4,
+    },
+    "Dart": {
+      "preferred_line_length": 100,
+      "completions": {
+        "words_min_length": 3,
+      },
+      "indent_guides": {
+        "coloring": "indent_aware",
+        "background_coloring": "disabled",
+      },
+      "tab_size": 2,
+    },
     "Python": {
       "inlay_hints": {
         "enabled": true,
@@ -66,7 +118,7 @@
   "preferred_line_length": 91,
   "show_wrap_guides": true,
   "edit_predictions": {
-    "mode": "eager",
+    "mode": "subtle",
     "provider": "zed",
     "ollama": { "model": "deepseek-coder:6.7b", "prompt_format": "deepseek_coder" },
   },
@@ -77,7 +129,11 @@
     },
   },
   "toolbar": {
-    "code_actions": true,
+    "agent_review": false,
+    "selections_menu": false,
+    "quick_actions": false,
+    "breadcrumbs": false,
+    "code_actions": false,
   },
 
   "telemetry": {
@@ -88,6 +144,8 @@
     "trust_all_worktrees": true,
   },
   "terminal": {
+    "alternate_scroll": "on",
+    "scroll_multiplier": 3.0,
     "shell": {
       "program": "nu",
     },
@@ -110,17 +168,13 @@
   "autosave": "on_focus_change",
   "buffer_font_family": "Monaspace Argon NF",
   "soft_wrap": "editor_width",
-  "icon_theme": {
-    "mode": "light",
-    "light": "Material Icon Theme",
-    "dark": "Material Icon Theme",
-  },
+  "icon_theme": "Material Icon Theme",
   "ui_font_size": 14.0,
   "buffer_font_size": 18.0,
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
-    "dark": "One Dark",
+    "dark": "Ayu Mirage",
   },
   "diagnostics": {
     "inline": {

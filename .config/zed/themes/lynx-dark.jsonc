@@ -53,6 +53,7 @@
           },
           "comment": {
             "color": "#716C93"
+            "decoration": "italic"
           },
           "string": {
             "color": "#D1F1A9"
