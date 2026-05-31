@@ -1,14 +1,16 @@
-/* ~/.config/waybar/style.css */
+/* https://github.com/noctalia-dev/noctalia-shell/blob/6b48834dd6c3913d211476ab2f964f3fb100675e/Assets/ColorScheme/Gruvbox/Gruvbox.json */
+@define-color text #f2c263;
+@define-color bg #242835;
+
 * {
-    font-family: "JetBrains Mono";
+    font-family: "Monospace Krypton NF";
     font-size: 14px;
-    font-weight: 500;
     padding: 0 4px;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0);
-    color: #cdd6f4;
+    background: @bg;
+    color: @text;
     border-radius: 12px;
     margin: 6px 6px 0 6px;
     box-shadow:
@@ -80,13 +82,6 @@ window#waybar.hidden {
 }
 
 /* ===== PULSEAUDIO ===== */
-#pulseaudio,
-#custom-audio {
-    padding: 0 12px;
-    color: #89b4fa;
-    background: rgba(137, 180, 250, 0.15);
-}
-
 #pulseaudio.muted {
     color: #f38ba8;
     background: rgba(243, 139, 168, 0.15);
@@ -94,8 +89,8 @@ window#waybar.hidden {
 
 /* ===== CLOCK ===== */
 #clock {
-    color: #eff7a6;
-    background: rgba(239, 247, 166, 0.15);
+    /*color: var(--text);*/
+    /*background: rgba(239, 247, 166, 0.15);*/
     font-weight: 700;
     margin-right: 4px;
 }

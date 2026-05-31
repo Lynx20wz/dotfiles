@@ -1,7 +1,7 @@
 #!/bin/bash
 
-HDMI_DEVICE="alsa_output.pci-0000_01_00.1.hdmi-stereo"
-ANALOG_DEVICE="alsa_output.pci-0000_0f_00.6.analog-stereo"
+HEADPHONES="alsa_output.usb-MV-SILICON_fifine_AM8_Pro_20190808-00.analog-stereo"
+SPEAKERS="alsa_output.pci-0000_0f_00.6.analog-stereo"
 
 get_current_sink() {
     pactl get-default-sink
@@ -14,10 +14,10 @@ get_current_volume() {
 show_icon() {
     current=$(get_current_sink)
 
-    if [[ "$current" == *"$HDMI_DEVICE"* ]]; then
-        echo '{"text": "󰋋", "alt": "hdmi", "class": "hdmi", "tooltip": "Наушники (HDMI)"}'
-    elif [[ "$current" == *"$ANALOG_DEVICE"* ]]; then
-        echo '{"text": "󰓃", "alt": "analog", "class": "analog", "tooltip": "Динамики (Analog)"}'
+    if [[ "$current" == *"$HEADPHONES"* ]]; then
+        echo '{"text": "󰋋", "alt": "HEADPHONESs", "class": "hdmi", "tooltip": "Наушники"}'
+    elif [[ "$current" == *"$SPEAKERS"* ]]; then
+        echo '{"text": "󰓃", "alt": "speakers", "class": "analog", "tooltip": "Динамики"}'
     else
         # Если какое-то другое устройство
         echo '{"text": "🔈", "alt": "unknown", "class": "unknown", "tooltip": "Другое устройство"}'
@@ -28,10 +28,10 @@ show_icon() {
 switch_audio() {
     current=$(get_current_sink)
 
-    if [[ "$current" == *"$HDMI_DEVICE"* ]]; then
-        new_sink="$ANALOG_DEVICE"
+    if [[ "$current" == *"$HEADPHONES"* ]]; then
+        new_sink="$SPEAKERS"
     else
-        new_sink="$HDMI_DEVICE"
+        new_sink="$HEADPHONES"
     fi
 
     # Переключаем устройство по умолчанию

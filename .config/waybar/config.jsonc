@@ -1,8 +1,8 @@
 {
   // "layer": "top", // Waybar at top layer
   // "position": "bottom", // Waybar position (top|bottom|left|right)
-  // "width": 1280, // Waybar width
-  "height": 25, // Waybar height (to be removed for auto height)
+  "width": 2550,
+  "height": 25,
   "spacing": 4,
   "modules-left": ["hyprland/workspaces", "custom/music"],
   "modules-center": ["clock"],
@@ -14,18 +14,20 @@
     // "custom/obs",
 
     "hyprland/language",
+    "keyboard-state",
     "tray",
   ],
 
   // LEFT
   "hyprland/workspaces": {
     "persistent-workspaces": {
-      "DP-1": [1, 9],
+      "DP-2": [9, 10],
+      "DP-3": [1],
     },
     "format": "{icon}",
     "format-icons": {
-      "1": "󰖟",
-      "9": "♫",
+      "9": "󰖟",
+      "10": "♫",
     },
   },
   "custom/music": {
@@ -37,7 +39,7 @@
     "on-scroll-down": "playerctl previous",
     "exec": "playerctl metadata --format '♫ {{artist}} - {{title}}' 2>/dev/null",
     "tooltip": false,
-    "interval": 10,
+    "interval": 2,
     "max-length": 50,
   },
   // "custom/english": {
@@ -45,6 +47,16 @@
   //   "on-click": "~/.local/bin/english_flutter",
   //   "tooltip": false,
   // },
+  //
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": "",
+    },
+  },
 
   // RIGHT
   "network": {
