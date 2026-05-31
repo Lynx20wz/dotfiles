@@ -1,4 +1,5 @@
-monitor=,preferred,auto,auto
+monitor=DP-2,2560x1440@200,2560x0,auto
+monitor=DP-3,2560x1440@240,0x0,auto
 
 $terminal = alacritty
 $fileManager = spf
@@ -7,7 +8,7 @@ $editor = zeditor
 $browser = firefox
 
 source = ./envs.conf
-source = ./exec-once.conf
+# source = ./exec-once.lua
 source = ./binds.conf
 
 ###################
@@ -127,10 +128,10 @@ windowrule {
 #     rounding = 0
 # }
 
-dwindle {
-    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-    preserve_split = true # You probably want this
-}
+# dwindle {
+    # pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+    # preserve_split = true # You probably want this
+# }
 
 master {
     new_status = master
