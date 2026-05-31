@@ -7,8 +7,11 @@ $env.config.buffer_editor = "zeditor"
 alias gcl = git clone
 alias clr = clear
 alias fr = flutter run
-alias hypr-exec = hyprctl dispatch exec
+alias hypr-exit = hyprctl dispatch exit
 alias venv = overlay use ./.venv/bin/activate.nu
+alias ymi = yandex-music-downloader --token y0__wgBELL0t6ADGN74BiCLq7uoFzCGyOWGCPGEwxdCeI_UfNk_BTX2gjhKI7ph --skip-existing --embed-cover --quality 2 --path-pattern "#album-artist - #title"
+alias ts = trans :ru
+alias grub-update = sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # package manager
 alias pac = sudo pacman -S
@@ -39,8 +42,13 @@ alias dart! = cd ~/documents/programming/dart
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
+def hypr-exec [command: string] {
+    ^hyprctl dispatch $command
+}
+
 def reload-waybar [] {
-    killall waybar; hypr-exec waybar
+    ^killall waybar
+    hyprctl dispatch hl.dsp.exec_cmd("waybar")
 }
 
 def exists [file] {
@@ -171,7 +179,37 @@ def adb-screen-off-timeout [timeout: int] {
     adb shell settings put system screen_off_timeout
 }
 
+# Move a file or directory to a target, preserving the filename and creating a symlink in the original location.
+def mvl [path: string, target: string] {
+    let filename = ($path | path basename)
+    let dest = if ($target | path type) == "dir" { ($target | path join $filename) } else { $target }
+
+    mv $path $dest
+    if $env.LAST_EXIT_CODE != 0 { return }
+
+    ln -s ($dest | path expand) $path
+}
+
+def convert-m4a-to-ogg [path: string] {
+    let path = ($path | path expand)
+
+    if ($path | path type) == "dir" {
+        ls $path | where type == "file" and ($it.name | str ends-with ".m4a") | each { |f|
+            let f = ($f | path parse)
+            let out = ($f.path | str replace -r '\.m4a$' '.ogg')
+            ffmpeg -i $f.path -c:a libvorbis -q:a 6 -c:v libtheora -q:v 10 -map_metadata 0 $out -y
+        }
+    } else if ($path | path type) == "file" {
+        let out = ($path | str replace -r '\.m4a$' '.ogg')
+        ffmpeg -i $path -c:a libvorbis -q:a 6 -c:v libtheora -q:v 10 -map_metadata 0 $out -y
+    } else {
+        print $"(ansi red)Ошибка: '($path)' не является файлом или папкой"
+    }
+}
+
 
 source ~/.local/share/nushell/scripts/custom-completions/git/git-completions.nu
 
 source ~/documents/dotfiles/.config/nushell/zoxide.nu
+
+uptime -p

@@ -19,3 +19,8 @@ normal = {family = "Monaspace Neon NF"}
 
 [font.offset]
 y = -1
+
+[general]
+import = [
+    "./themes/ayu_mirage.toml"
+]
