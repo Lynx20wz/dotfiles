@@ -1,6 +1,6 @@
 local mainMod      = "SUPER"
 local terminal     = "alacritty"
-local fileManager  = "spf"
+local fileManager  = "dolphin"
 local menu         = "wofi"
 local editor       = "zeditor"
 local browser      = "firefox"
@@ -64,6 +64,8 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- Mine
+hl.bind("ALT + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
+hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(terminal .. " --command btop"))
 
 -- open apps
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
@@ -71,18 +73,14 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(editor))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("AyuGram"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
 
 -- rofi
 hl.bind("ALT + Space", hl.dsp.exec_cmd("/home/lynx20wz/.config/rofi/scripts/launcher_t1"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("/home/lynx20wz/.config/rofi/scripts/powermenu_t1"))
 hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 
-hl.bind("ALT + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
-hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(terminal .. " --command btop"))
-
 -- screenshot
---
+
 -- local str =
 -- 'nu -c "hyprshot -m %s -sz -o \'/run/media/lynx20wz/hard/pictures/Screenshots/\' -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'
 
@@ -90,5 +88,23 @@ hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(terminal .. " --command btop"))
 -- hl.bind("ALT + SHIFT + W", hl.dsp.exec_cmd(str:format('%q', "window")))
 -- hl.bind("Print", hl.dsp.exec_cmd(str:format('%q', "output")))
 
+hl.bind("ALT + SHIFT + S",
+    hl.dsp.exec_cmd(
+        'nu -c "hyprshot -m region -o /run/media/lynx20wz/hard/pictures/Screenshots/ -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'))
+hl.bind("ALT + SHIFT + W",
+    hl.dsp.exec_cmd(
+        'nu -c "hyprshot -m window -o /run/media/lynx20wz/hard/pictures/Screenshots/ -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'))
+hl.bind("Print",
+    hl.dsp.exec_cmd(
+        'nu -c "hyprshot -m output -o /run/media/lynx20wz/hard/pictures/Screenshots/ -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'))
 
-hl.bind("ALT + Space", hl.dsp.exec_cmd("/home/lynx20wz/.config/rofi/scripts/launcher_t1"))
+-- stop music
+hl.bind("CTRL + ALT + KP_Insert", hl.dsp.exec_cmd("playerctl play-pause"))
+
+-- output change
+hl.bind("CTRL + ALT + KP_End",
+    hl.dsp.exec_cmd("pactl set-default-sink alsa_output.usb-MV-SILICON_fifine_AM8_Pro_20190808-00.analog-stereo"))
+hl.bind("CTRL + ALT + KP_Down", hl.dsp.exec_cmd("pactl set-default-sink alsa_output.pci-0000_0f_00.6.analog-stereo"))
+
+-- monitoring
+hl.bind("CTRL + ALT + KP_Page_Down", hl.dsp.exec_cmd("~/.local/bin/monitoring-switch toggle"))
