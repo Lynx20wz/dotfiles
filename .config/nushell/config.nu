@@ -7,7 +7,7 @@ $env.config.buffer_editor = "zeditor"
 alias gcl = git clone
 alias clr = clear
 alias fr = flutter run
-alias hypr-exit = hyprctl dispatch exit
+alias hypr-exit = hyprctl dispatch 'hl.dsp.exit()'
 alias venv = overlay use ./.venv/bin/activate.nu
 alias ymi = yandex-music-downloader --token y0__wgBELL0t6ADGN74BiCLq7uoFzCGyOWGCPGEwxdCeI_UfNk_BTX2gjhKI7ph --skip-existing --embed-cover --quality 2 --path-pattern "#album-artist - #title"
 alias ts = trans :ru
@@ -41,6 +41,10 @@ alias dart! = cd ~/documents/programming/dart
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
+def phone-cam [] {
+    scrcpy --video-source=camera --v4l2-sink=/dev/video2 --no-audio --no-window --max-size=1920 out+err> ~/.cache/scrcpy-cam.log
+}
 
 def hypr-exec [command: string] {
     ^hyprctl dispatch $command

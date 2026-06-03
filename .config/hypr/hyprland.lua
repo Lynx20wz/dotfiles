@@ -123,7 +123,7 @@ hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.5, bezier = "ea
 -- "Smart gaps" / "No gaps when only"
 -- uncomment all if you wish to use that.
 -- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
+-- hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
 -- hl.window_rule({
 --     name  = "no-gaps-wtv1",
 --     match = { float = false, workspace = "w[tv1]" },
@@ -131,11 +131,20 @@ hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.5, bezier = "ea
 --     rounding    = 0,
 -- })
 -- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
+--     name        = "no-gaps-f1",
+--     match       = { float = false, workspace = "f[1]" },
 --     border_size = 0,
 --     rounding    = 0,
 -- })
+
+hl.workspace_rule({ workspace = "1", monitor = "DP-3", default = true })
+hl.workspace_rule({ workspace = "9", monitor = "DP-2", default = true })
+for i = 1, 8 do
+    hl.workspace_rule({ workspace = tostring(i), monitor = "DP-3" })
+end
+for i = 9, 10 do
+    hl.workspace_rule({ workspace = tostring(i), monitor = "DP-2" })
+end
 
 hl.config({
     master = {
@@ -175,14 +184,6 @@ hl.config({
     },
 })
 
-hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
-})
-
--- Example per-device config
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
     name        = "epic-mouse-v1",
     sensitivity = -0.5,
