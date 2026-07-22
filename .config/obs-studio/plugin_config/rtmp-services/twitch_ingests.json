@@ -13,7 +13,7 @@
             "_id": 1,
             "availability": 1.0,
             "default": false,
-            "name": "Europe: Sweden, Stockholm (10)",
+            "name": "Europe (Stockholm)",
             "url_template": "rtmp://eun10.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://eun10.contribute.live-video.net/app/{stream_key}",
             "priority": 1
@@ -31,7 +31,7 @@
             "_id": 3,
             "availability": 1.0,
             "default": false,
-            "name": "Europe: France, Paris (30)",
+            "name": "Europe (Paris)",
             "url_template": "rtmp://euw30.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://euw30.contribute.live-video.net/app/{stream_key}",
             "priority": 3
@@ -40,7 +40,7 @@
             "_id": 4,
             "availability": 1.0,
             "default": false,
-            "name": "Europe West: Ireland (10)",
+            "name": "Europe (Ireland)",
             "url_template": "rtmp://euw10.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://euw10.contribute.live-video.net/app/{stream_key}",
             "priority": 4
@@ -49,7 +49,7 @@
             "_id": 5,
             "availability": 1.0,
             "default": false,
-            "name": "Asia: India, Mumbai (30)",
+            "name": "Asia Pacific (Mumbai)",
             "url_template": "rtmp://aps30.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://aps30.contribute.live-video.net/app/{stream_key}",
             "priority": 5
@@ -58,7 +58,7 @@
             "_id": 6,
             "availability": 1.0,
             "default": false,
-            "name": "Asia: South Korea, Seoul (20)",
+            "name": "Asia Pacific (Seoul)",
             "url_template": "rtmp://apn20.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://apn20.contribute.live-video.net/app/{stream_key}",
             "priority": 6
@@ -67,7 +67,7 @@
             "_id": 7,
             "availability": 1.0,
             "default": false,
-            "name": "Asia: Japan, Narita (10)",
+            "name": "Asia Pacific (Tokyo)",
             "url_template": "rtmp://apn10.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://apn10.contribute.live-video.net/app/{stream_key}",
             "priority": 7
@@ -76,7 +76,7 @@
             "_id": 8,
             "availability": 1.0,
             "default": false,
-            "name": "US East: Ashburn, VA (10)",
+            "name": "US East (N. Virginia)",
             "url_template": "rtmp://use10.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://use10.contribute.live-video.net/app/{stream_key}",
             "priority": 8
@@ -85,7 +85,7 @@
             "_id": 9,
             "availability": 1.0,
             "default": false,
-            "name": "US East: Ohio (20)",
+            "name": "US East (Ohio)",
             "url_template": "rtmp://use20.contribute.live-video.net/app/{stream_key}",
             "url_template_secure": "rtmps://use20.contribute.live-video.net/app/{stream_key}",
             "priority": 9

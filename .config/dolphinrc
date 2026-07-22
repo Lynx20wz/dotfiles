@@ -5,6 +5,7 @@ IconSize=22
 
 [DetailsMode]
 IconSize=22
+PreviewSize=16
 
 [ExtractDialog]
 2560x1440 screen: Window-Maximized=true
@@ -27,7 +28,7 @@ ViewPropsTimestamp=2026,1,15,19,36,36.594
 [IconsMode]
 IconSize=48
 MaximumTextLines=2
-PreviewSize=80
+PreviewSize=128
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false

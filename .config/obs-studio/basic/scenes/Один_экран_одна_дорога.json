@@ -1,6 +1,7 @@
 {
+    "name": "Один экран, одна дорога",
     "DesktopAudioDevice1": {
-        "prev_ver": 536870916,
+        "prev_ver": 536936450,
         "name": "Desktop Audio",
         "uuid": "5e132f2f-7afa-422b-8d8d-84d3d43520c7",
         "id": "wasapi_output_capture",
@@ -31,7 +32,7 @@
         "private_settings": {}
     },
     "AuxAudioDevice1": {
-        "prev_ver": 536870916,
+        "prev_ver": 536936450,
         "name": "Mic/Aux",
         "uuid": "0d2f072e-f030-48ce-bd07-518dff3d7a92",
         "id": "wasapi_input_capture",
@@ -61,17 +62,9 @@
         "monitoring_type": 0,
         "private_settings": {}
     },
-    "current_scene": "Scene",
-    "current_program_scene": "Scene",
-    "scene_order": [
-        {
-            "name": "Scene"
-        }
-    ],
-    "name": "Один экран, одна дорога",
     "sources": [
         {
-            "prev_ver": 536870916,
+            "prev_ver": 536936450,
             "name": "Scene",
             "uuid": "ebe5ca12-ad68-44c3-89cc-5bac105738da",
             "id": "scene",
@@ -103,6 +96,17 @@
         }
     ],
     "groups": [],
+    "scene_order": [
+        {
+            "name": "Scene"
+        }
+    ],
+    "current_scene": "Scene",
+    "current_program_scene": "Scene",
+    "canvases": [],
+    "current_transition": "Fade",
+    "transition_duration": 300,
+    "transitions": [],
     "quick_transitions": [
         {
             "name": "Cut",
@@ -126,16 +130,15 @@
             "fade_to_black": true
         }
     ],
-    "transitions": [],
     "saved_projectors": [],
-    "canvases": [],
-    "current_transition": "Fade",
-    "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": -6,
+    "scaling_level": -15,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
+    "virtual-camera": {
+        "type2": 3
+    },
     "modules": {
         "auto-scene-switcher": {
             "active": false,

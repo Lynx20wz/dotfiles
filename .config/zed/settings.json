@@ -1,4 +1,5 @@
 {
+  "semantic_tokens": "combined",
   "diff_view_style": "unified",
   "completion_menu_item_kind": "symbol",
   "tabs": {
@@ -45,7 +46,7 @@
   "git_panel": {
     "sort_by_path": false,
     "dock": "left",
-    "tree_view": false,
+    "tree_view": true,
   },
   "agent_servers": {
     "qwen-code": {
@@ -82,6 +83,9 @@
     "coloring": "indent_aware",
   },
   "languages": {
+    "Svelte": {
+      "tab_size": 2
+    },
     "Markdown": {
       "hard_tabs": false,
       "tab_size": 4,
@@ -98,6 +102,10 @@
       "tab_size": 2,
     },
     "Python": {
+      "prettier": {
+        "allowed": false
+      },
+      "document_symbols": "on",
       "inlay_hints": {
         "enabled": true,
       },
