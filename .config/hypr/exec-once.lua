@@ -4,3 +4,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("yandex-music", { workspace = "10" })
     hl.exec_cmd("AyuGram & vesktop & firefox", { workspace = "9" })
 end)
+
+-- hl.workspace_rule({ workspace = "9", on_created_empty = "AyuGram & vesktop & firefox" })

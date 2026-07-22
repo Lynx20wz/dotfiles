@@ -2,7 +2,8 @@ require("binds")
 require("exec-once")
 require("envs")
 require("window_rules")
-
+require("hypremoji")
+require("zooming")
 
 ------------------
 ---- MONITORS ----
@@ -73,7 +74,7 @@ hl.config({
             enabled      = true,
             range        = 4,
             render_power = 3,
-            color        = 0xee1a1a1a,
+            color        = '0xee1a1a1a',
         },
 
         blur             = {
@@ -95,6 +96,7 @@ hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36,
 hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
 hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
 hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
+hl.curve("overshoot", { type = "bezier", points = { { 0.5, 0.9 }, { 0.1, 1.1 } } })
 
 -- Default springs
 hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
@@ -118,6 +120,7 @@ hl.animation({ leaf = "windowsIn", enabled = true, speed = 3.0, bezier = "easeOu
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.5, bezier = "linear", style = "popin 0%" })
 hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.5, bezier = "easeOutQuint", style = "slide" })
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.5, bezier = "easeOutQuint", style = "slide" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 1.0, bezier = "overshoot"})
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
@@ -139,7 +142,7 @@ hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.5, bezier = "ea
 
 hl.workspace_rule({ workspace = "1", monitor = "DP-3", default = true })
 hl.workspace_rule({ workspace = "9", monitor = "DP-2", default = true })
-for i = 1, 8 do
+for i = 1, 7 do
     hl.workspace_rule({ workspace = tostring(i), monitor = "DP-3" })
 end
 for i = 9, 10 do
@@ -169,10 +172,7 @@ hl.config({
 hl.config({
     input = {
         kb_layout    = "us, ru",
-        kb_variant   = "",
-        kb_model     = "",
         kb_options   = "grp:win_space_toggle",
-        kb_rules     = "",
 
         follow_mouse = 1,
 
