@@ -22,13 +22,14 @@ OpenExternallyCalledFolderInNewTab=true
 RememberOpenedTabs=false
 ShowFullPath=true
 ShowStatusBar=Disabled
+ShowToolTips=true
 Version=202
 ViewPropsTimestamp=2026,1,15,19,36,36.594
 
 [IconsMode]
 IconSize=48
 MaximumTextLines=2
-PreviewSize=128
+PreviewSize=96
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false

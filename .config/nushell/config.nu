@@ -12,6 +12,7 @@ alias venv = overlay use ./.venv/bin/activate.nu
 alias ymi = yandex-music-downloader --token y0__wgBELL0t6ADGN74BiCLq7uoFzCGyOWGCPGEwxdCeI_UfNk_BTX2gjhKI7ph --skip-existing --embed-cover --quality 2 --path-pattern "#album-artist - #title"
 alias ts = trans :ru
 alias grub-update = sudo grub-mkconfig -o /boot/grub/grub.cfg
+alias fonts-reload = fc-cache -fv
 
 # package manager
 alias pac = sudo pacman -S
@@ -211,9 +212,6 @@ def convert-m4a-to-ogg [path: string] {
     }
 }
 
-
-source ~/.local/share/nushell/scripts/custom-completions/git/git-completions.nu
-
-source ~/documents/dotfiles/.config/nushell/zoxide.nu
+source zoxide.nu
 
 uptime -p

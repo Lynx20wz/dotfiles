@@ -4,6 +4,7 @@
 
 # temporarily
 .config/rofi
+.config/nvim
 
 /.config/obs-studio/logs/
 /.config/obs-studio/profiler_data/
