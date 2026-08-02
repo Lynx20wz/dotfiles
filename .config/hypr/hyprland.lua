@@ -145,7 +145,7 @@ hl.workspace_rule({ workspace = "9", monitor = "DP-2", default = true })
 for i = 1, 7 do
     hl.workspace_rule({ workspace = tostring(i), monitor = "DP-3" })
 end
-for i = 9, 10 do
+for i = 8, 10 do
     hl.workspace_rule({ workspace = tostring(i), monitor = "DP-2" })
 end
 

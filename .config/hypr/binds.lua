@@ -81,13 +81,6 @@ hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns
 
 -- screenshot
 
--- local str =
--- 'nu -c "hyprshot -m %s -sz -o \'/run/media/lynx20wz/hard/pictures/Screenshots/\' -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'
-
--- hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd(str:format('%Y', "region")))
--- hl.bind("ALT + SHIFT + W", hl.dsp.exec_cmd(str:format('%q', "window")))
--- hl.bind("Print", hl.dsp.exec_cmd(str:format('%q', "output")))
-
 hl.bind("ALT + SHIFT + S",
     hl.dsp.exec_cmd(
         'nu -c "hyprshot -z -m region -o /run/media/lynx20wz/hard/pictures/Screenshots/ -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'))
