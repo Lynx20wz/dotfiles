@@ -1,5 +1,5 @@
 local mainMod      = "SUPER"
-local terminal     = "alacritty"
+local terminal     = "ghostty"
 local fileManager  = "dolphin"
 local menu         = "wofi"
 local editor       = "zeditor"
@@ -83,13 +83,13 @@ hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns
 
 hl.bind("ALT + SHIFT + S",
     hl.dsp.exec_cmd(
-        'nu -c "hyprshot -z -m region -o /run/media/lynx20wz/hard/pictures/Screenshots/ -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'))
+        "hyprshot -z -m region -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
 hl.bind("ALT + SHIFT + W",
     hl.dsp.exec_cmd(
-        'nu -c "hyprshot -z -m window -o /run/media/lynx20wz/hard/pictures/Screenshots/ -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'))
+        "hyprshot -z -m window -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
 hl.bind("Print",
     hl.dsp.exec_cmd(
-        'nu -c "hyprshot -z -m output -o /run/media/lynx20wz/hard/pictures/Screenshots/ -f (date now | format date \'%Y-%m-%d %H:%M:%S Hyprshot.png\')"'))
+        "hyprshot -z -m output -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
 
 -- stop music
 hl.bind("CTRL + ALT + KP_Insert", hl.dsp.exec_cmd("playerctl play-pause"))
