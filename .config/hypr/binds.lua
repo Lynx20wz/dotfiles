@@ -1,7 +1,7 @@
 local mainMod      = "SUPER"
 local terminal     = "ghostty"
 local fileManager  = "dolphin"
-local menu         = "wofi"
+local menu         = "rofi"
 local editor       = "zeditor"
 local browser      = "firefox"
 
@@ -75,8 +75,8 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("AyuGram"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
 
 -- rofi
-hl.bind("ALT + Space", hl.dsp.exec_cmd("/home/lynx20wz/.config/rofi/scripts/launcher_t1"))
-hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("/home/lynx20wz/.config/rofi/scripts/powermenu_t1"))
+hl.bind("ALT + Space", hl.dsp.exec_cmd("~/.config/rofi/scripts/launcher_t1"))
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("~/.config/rofi/scripts/powermenu_t1"))
 hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 
 -- screenshot
