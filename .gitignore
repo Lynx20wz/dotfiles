@@ -1,15 +1,7 @@
 .config/zed/ext/
 .config/superfile/theme
-.config/nushell/history.txt
-
-# temporarily
 .config/rofi
 .config/nvim
+.config/obs-studio
 
-/.config/obs-studio/logs/
-/.config/obs-studio/profiler_data/
-/.config/obs-studio/plugin_config/obs-browser/**
-.config/obs-studio/.sentinel/**
 *.log
-
-bin/kvweb

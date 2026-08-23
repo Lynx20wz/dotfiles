@@ -18,7 +18,7 @@
 
     icon_corner_radius = 0
     icon_corners = all
-    indicate_hidden = yes
+    indicate_hidden = no
 
     transparency = 5
 

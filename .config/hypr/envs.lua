@@ -8,3 +8,4 @@ hl.env("ANDROID_AVD_HOME", "/mnt/data/avds/")
 
 -- https://www.lorenzobettini.it/2024/05/fixing-the-empty-open-with-in-dolphin-in-hyprland/
 hl.env("XDG_MENU_PREFIX", "arch- kbuildsycoca6")
+hl.env("GTK_THEME", "Adwaita:dark")

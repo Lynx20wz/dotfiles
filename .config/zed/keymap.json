@@ -110,5 +110,17 @@
     "bindings": {
       "ctrl-down": "editor::DuplicateLineDown"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-d": "editor::DeleteLine"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-shift-k": "editor::DeleteLine"
+    }
   }
 ]
