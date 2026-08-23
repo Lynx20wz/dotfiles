@@ -65,7 +65,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- Mine
 hl.bind("ALT + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
-hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(terminal .. " --command btop"))
+hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(terminal .. " -e btop"))
 
 -- open apps
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))

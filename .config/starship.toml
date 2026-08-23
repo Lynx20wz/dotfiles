@@ -1,8 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$os\
-$username\
+┌ $os\
+$time\
+$git_branch\
+$git_status\
 $c\
 $cpp\
 $rust\
@@ -11,11 +13,8 @@ $java\
 $kotlin\
 $python\
 $dart\
-$git_branch\
-$git_status\
-$time\
-[ ](fg:color_bg1)\
-$line_break$directory$character"""
+$sudo\
+$line_break└ $username@$directory $character"""
 
 palette = 'gruvbox_dark'
 
@@ -33,7 +32,7 @@ color_yellow = '#d79921'
 color_c = '#085EA0'
 
 [os]
-disabled = false
+disabled = true
 style = "bg:color_blue fg:color_fg0"
 
 [os.symbols]
@@ -48,12 +47,12 @@ EndeavourOS = ""
 
 [username]
 show_always = true
-style_user = "bg:color_blue fg:color_fg0"
+style_user = "bg:transparent fg:#00bfff"
 style_root = "bg:color_blue fg:color_fg0"
-format = '[ $user ]($style)'
+format = '[$user]($style)'
 
 [directory]
-format = "[$path ]($style)"
+format = "[$path]($style)"
 truncate_to_repo = true
 home_symbol = "󰋞"
 
@@ -65,14 +64,15 @@ home_symbol = "󰋞"
 "programming" = ""
 "games" = "󰊗"
 
+style = "bold fg:0"
+
 [git_branch]
 symbol = ""
-style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+style = "bold fg:0"
+format = ' - [$symbol $branch]($style)'
 
 [git_status]
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+format = '[$all_status$ahead_behind]($git_style) - '
 
 [nodejs]
 symbol = ""
@@ -91,8 +91,8 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_c)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:color_red"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_red)]($style)'
+# style = "bg:color_red"
+format = '[$symbol ($version) ]($style)'
 
 [kotlin]
 symbol = ""
@@ -112,8 +112,8 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:#0A5997)]($style)'
 [time]
 disabled = false
 time_format = "%r"
-style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+# style = "bg:color_bg1"
+format = '[$time]($style)'
 
 [character]
 
