@@ -28,7 +28,7 @@ Pane {
 
     font.family: config.Font
     font.pointSize: config.FontSize !== "" ? config.FontSize : parseInt(height / 80) || 13
-    
+
     focus: true
 
     property bool leftleft: config.HaveFormBackground == "true" &&
@@ -57,7 +57,7 @@ Pane {
         height: parent.height
         width: parent.width
         anchors.fill: parent
-        
+
         Rectangle {
             id: tintLayer
 
@@ -92,94 +92,6 @@ Pane {
             z: 1
         }
 
-        Loader {
-            id: virtualKeyboard
-            source: "Components/VirtualKeyboard.qml"
-
-            // x * 0.4 = x / 2.5
-            width: config.KeyboardSize == "" ? parent.width * 0.4 : parent.width * config.KeyboardSize
-            anchors.bottom: parent.bottom
-            anchors.left: config.VirtualKeyboardPosition == "left" ? parent.left : undefined;
-            anchors.horizontalCenter: config.VirtualKeyboardPosition == "center" ? parent.horizontalCenter : undefined;
-            anchors.right: config.VirtualKeyboardPosition == "right" ? parent.right : undefined;
-            z: 1
-            
-            state: "hidden"
-            property bool keyboardActive: item ? item.active : false
-
-            function switchState() { state = state == "hidden" ? "visible" : "hidden"}
-            states: [
-                State {
-                    name: "visible"
-                    PropertyChanges {
-                        target: virtualKeyboard
-                        y: root.height - virtualKeyboard.height
-                        opacity: 1
-                    }
-                },
-                State {
-                    name: "hidden"
-                    PropertyChanges {
-                        target: virtualKeyboard
-                        y: root.height - root.height/4
-                        opacity: 0
-                    }
-                }
-            ]
-            transitions: [
-                Transition {
-                    from: "hidden"
-                    to: "visible"
-                    SequentialAnimation {
-                        ScriptAction {
-                            script: {
-                                virtualKeyboard.item.activated = true;
-                                Qt.inputMethod.show();
-                            }
-                        }
-                        ParallelAnimation {
-                            NumberAnimation {
-                                target: virtualKeyboard
-                                property: "y"
-                                duration: 100
-                                easing.type: Easing.OutQuad
-                            }
-                            OpacityAnimator {
-                                target: virtualKeyboard
-                                duration: 100
-                                easing.type: Easing.OutQuad
-                            }
-                        }
-                    }
-                },
-                Transition {
-                    from: "visible"
-                    to: "hidden"
-                    SequentialAnimation {
-                        ParallelAnimation {
-                            NumberAnimation {
-                                target: virtualKeyboard
-                                property: "y"
-                                duration: 100
-                                easing.type: Easing.InQuad
-                            }
-                            OpacityAnimator {
-                                target: virtualKeyboard
-                                duration: 100
-                                easing.type: Easing.InQuad
-                            }
-                        }
-                        ScriptAction {
-                            script: {
-                                virtualKeyboard.item.activated = false;
-                                Qt.inputMethod.hide();
-                            }
-                        }
-                    }
-                }
-            ]
-        }
-        
         Image {
             id: backgroundPlaceholderImage
 
@@ -190,10 +102,10 @@ Pane {
 
         AnimatedImage {
             id: backgroundImage
-            
+
             MediaPlayer {
                 id: player
-                
+
                 videoOutput: videoOutput
                 autoPlay: true
                 playbackRate: config.BackgroundSpeed == "" ? 1.0 : config.BackgroundSpeed
@@ -206,7 +118,7 @@ Pane {
 
             VideoOutput {
                 id: videoOutput
-                
+
                 fillMode: config.CropBackground == "true" ? VideoOutput.PreserveAspectCrop : VideoOutput.PreserveAspectFit
                 anchors.fill: parent
             }
@@ -267,14 +179,14 @@ Pane {
 
         MultiEffect {
             id: blur
-            
+
             height: parent.height
 
             // width: config.FullBlur == "true" ? parent.width : form.width
             // anchors.centerIn: config.FullBlur == "true" ? parent : form
 
             // This solves problem when FullBlur and HaveFormBackground is set to true but PartialBlur is false and FormPosition isn't center.
-            width: (config.FullBlur == "true" && config.PartialBlur == "false" && config.FormPosition != "center" ) ? parent.width - formBackground.width : config.FullBlur == "true" ? parent.width : form.width 
+            width: (config.FullBlur == "true" && config.PartialBlur == "false" && config.FormPosition != "center" ) ? parent.width - formBackground.width : config.FullBlur == "true" ? parent.width : form.width
             anchors.centerIn: config.FullBlur == "true" ? backgroundImage : form
 
             source: config.FullBlur == "true" ? backgroundImage : blurMask
