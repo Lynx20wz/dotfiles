@@ -84,17 +84,19 @@ hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns
 
 hl.bind("ALT + SHIFT + S",
     hl.dsp.exec_cmd(
-        "hyprshot -z -m region -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
+        "hyprshot -zsm region -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
+hl.bind(mainMod .. "+ ALT + S",
+    hl.dsp.exec_cmd(
+        "hyprshot -zsm region --raw | tensaku --filename - --actions-on-escape=save-to-file --floating-hack --disable-notifications -o \"~/data/pictures/Screenshots/$(date '+%Y-%m-%d %H:%M:%S') Hyprshot-Tensaku.png\""))
 hl.bind("ALT + SHIFT + W",
     hl.dsp.exec_cmd(
-        "hyprshot -z -m window -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
+        "hyprshot -zsm window -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
 hl.bind("Print",
     hl.dsp.exec_cmd(
-        "hyprshot -z -m output -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
+        "hyprshot -zsm output -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))
 
 -- stop music
 hl.bind("CTRL + ALT + KP_Insert", hl.dsp.exec_cmd("playerctl play-pause"))
-
 -- output change
 hl.bind("CTRL + ALT + KP_End",
     hl.dsp.exec_cmd("pactl set-default-sink alsa_output.usb-MV-SILICON_fifine_AM8_Pro_20190808-00.analog-stereo"))
@@ -102,3 +104,5 @@ hl.bind("CTRL + ALT + KP_Down", hl.dsp.exec_cmd("pactl set-default-sink alsa_out
 
 -- monitoring
 hl.bind("CTRL + ALT + KP_Page_Down", hl.dsp.exec_cmd("~/.local/bin/monitoring-switch toggle"))
+
+hl.bind(mainMod .. " + Delete", hl.dsp.pass({ window = "class:^(com\\.obsproject\\.Studio)$" }))
