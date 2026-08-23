@@ -1,26 +1,19 @@
 /* https://github.com/noctalia-dev/noctalia-shell/blob/6b48834dd6c3913d211476ab2f964f3fb100675e/Assets/ColorScheme/Gruvbox/Gruvbox.json */
-@define-color text #f2c263;
-@define-color bg #242835;
-
 * {
-    font-family: "Monospace Krypton NF";
+    font-family: "Monaspace Argon NF";
     font-size: 14px;
     padding: 0 4px;
 }
 
 window#waybar {
-    background: @bg;
-    color: @text;
+    background: #242835;
+    color:  #f2c263;
     border-radius: 12px;
     margin: 6px 6px 0 6px;
     box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-}
-
-window#waybar.hidden {
-    opacity: 0.3;
 }
 
 /* Общие стили для всех модулей */
@@ -65,11 +58,6 @@ window#waybar.hidden {
     background: rgba(166, 227, 161, 0.15);
 }
 
-#workspaces button:hover:not(.active) {
-    color: #cdd6f4;
-    background: rgba(108, 112, 134, 0.3);
-}
-
 /* ===== music MUSIC MODULE ===== */
 #custom-music {
     background: rgba(137, 180, 250, 0.15);
@@ -106,18 +94,6 @@ window#waybar.hidden {
     padding: 0 10px;
 }
 
-#tray > .passive {
-    opacity: 0.6;
-}
-
-#tray > .needs-attention {
-    color: #f9e2af;
-    background: linear-gradient(
-        135deg,
-        rgba(249, 226, 175, 0.25) 0%,
-        rgba(249, 226, 175, 0.15) 100%
-    );
-}
 
 /* ===== WINDOW ===== */
 #window {
@@ -154,4 +130,8 @@ tooltip label {
     color: #6c7086;
     padding: 0 4px;
     opacity: 0.5;
+}
+
+#custom-obs.blurred {
+    color: red;
 }

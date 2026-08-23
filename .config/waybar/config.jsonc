@@ -7,11 +7,11 @@
   "modules-left": ["hyprland/workspaces", "custom/music"],
   "modules-center": ["clock"],
   "modules-right": [
+    "custom/obs",
     "network",
     // "custom/english",
     "pulseaudio",
     "custom/audio",
-    // "custom/obs",
 
     "hyprland/language",
     "keyboard-state",
@@ -20,10 +20,6 @@
 
   // LEFT
   "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "DP-2": [9, 10],
-      "DP-3": [1],
-    },
     "format": "{icon}",
     "format-icons": {
       "9": "󰖟",
@@ -31,7 +27,6 @@
     },
   },
   "custom/music": {
-    "format": "{}",
     "escape": true,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
@@ -42,12 +37,6 @@
     "interval": 2,
     "max-length": 50,
   },
-  // "custom/english": {
-  //   "format": "en",
-  //   "on-click": "~/.local/bin/english_flutter",
-  //   "tooltip": false,
-  // },
-  //
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
@@ -71,13 +60,11 @@
     "on-click": "alacritty -e gazelle",
   },
   "pulseaudio": {
-    "scroll-step": 5, // %, can be a float
+    "scroll-step": 5,
     "format": "{icon}  {volume}%",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": "  {icon} {format_source}",
     "format-muted": "  {format_source}",
-    // "format-source": " {volume}%",
-    // "format-source-muted": "",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -89,18 +76,16 @@
     "on-click": "pavucontrol",
   },
   "custom/audio": {
-    "exec": "~/.dotfiles/.config/waybar/custom/audio-switcher.sh icon",
+    "exec": "/mnt/data/documents/dotfiles/.config/waybar/custom/audio-switcher.sh icon",
     "return-type": "json",
-    "interval": 1,
-    "on-click": "~/.dotfiles/.config/waybar/custom/audio-switcher.sh switch",
+    "interval": 3,
+    "on-click": "/mnt/data/documents/dotfiles/.config/waybar/custom/audio-switcher.sh switch",
     "tooltip": true,
-    "format": "{}",
   },
   "custom/obs": {
-    "exec": "~/.dotfiles/.config/waybar/custom/obs.py",
+    "exec": "/mnt/data/documents/dotfiles/.config/waybar/custom/obs-waybar-plugin -b 'black screen'",
     "return-type": "json",
-    "format": "{}",
-    "interval": 5,
+    "interval": 1,
   },
   "clock": {
     "format": "{:%I:%M:%S%p}",
@@ -109,7 +94,6 @@
     "interval": 1,
   },
   "hyprland/language": {
-    "format": "{}",
     "format-en": "🇺🇸",
     "format-ru": "🇷🇺",
   },
