@@ -1,0 +1,7 @@
+mode=drun
+show_icons=true
+allow_images=true
+drun-display-format={name}
+width=800
+lines=8
+layer-shell=true
