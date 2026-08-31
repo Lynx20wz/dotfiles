@@ -1,5 +1,5 @@
 local mainMod      = "SUPER"
-local terminal     = "ghostty"
+local terminal     = "kitty"
 local fileManager  = "dolphin"
 local menu         = "rofi"
 local editor       = "zeditor"
