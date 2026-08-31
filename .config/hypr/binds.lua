@@ -81,7 +81,6 @@ hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("~/.config/rofi/scripts/powermenu
 hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 
 -- screenshot
-
 hl.bind("ALT + SHIFT + S",
     hl.dsp.exec_cmd(
         "hyprshot -zsm region -o ~/data/pictures/Screenshots/ -f \"$(date '+%Y-%m-%d %H:%M:%S') Hyprshot.png\""))

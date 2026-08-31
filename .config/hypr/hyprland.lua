@@ -142,12 +142,16 @@ hl.animation({ leaf = "windowsMove", enabled = true, speed = 1.0, bezier = "over
 
 hl.workspace_rule({ workspace = "1", monitor = "DP-3", default = true })
 hl.workspace_rule({ workspace = "9", monitor = "DP-2", default = true })
-for i = 1, 7 do
+for i = 1, 6 do
     hl.workspace_rule({ workspace = tostring(i), monitor = "DP-3" })
 end
 for i = 8, 10 do
     hl.workspace_rule({ workspace = tostring(i), monitor = "DP-2" })
 end
+
+-- Below doesn't work
+-- hl.workspace_rule({ workspace = "r[1-6]", monitor = "DP-3" })
+-- hl.workspace_rule({ workspace = "r[8-10]", monitor = "DP-2" })
 
 hl.config({
     master = {
