@@ -8,6 +8,7 @@ end
 alias clr="clear"
 alias gcl="git clone"
 alias fr="fvm flutter run"
+alias frr="fvm flutter run --release"
 alias ur="uv run ."
 alias hypr-exit="hyprctl dispatch 'hl.dsp.exit()'"
 alias venv="source ./.venv/bin/activate.fish"
@@ -33,11 +34,23 @@ alias ls="lsd"
 alias cat="bat"
 
 # == Functions ==
+function gaw -d "Get active window information with delay"
+    sleep 1
+    hyprctl activewindow
+end
 
 function hypr-reload -a program -d "Reload program with hyprctl"
     killall $program 2> /dev/null
     hyprctl eval "hl.exec_cmd(\"$program\")" > /dev/null
     echo "Reloaded $program"
+end
+
+function zd -a path -d "Find path using zoxide and open in file manager"
+    set dir (zoxide query -- $path 2>/dev/null)
+    if test $status -eq 0
+        nohup dolphin "$dir" &>/dev/null & disown $last_pid
+        exit
+    end
 end
 
 set -g fish_greeting (uptime -p)
