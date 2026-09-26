@@ -46,3 +46,24 @@ hl.window_rule({
     size  = { pipWidth, pipHeight },
     move  = { "monitor_w-" .. pipWidth, 30 },
 })
+
+hl.window_rule({
+    name  = "8th workspace",
+    match = { class = "^(md\\.obsidian\\.Obsidian|superproductivity)$" },
+
+    workspace = "8 silent",
+})
+
+hl.window_rule({
+    name  = "9th workspace",
+    match = { class = "^(com\\.ayugram\\.desktop|vesktop|firefox)$" },
+
+    workspace = "9",
+})
+
+hl.window_rule({
+    name  = "10th workspace",
+    match = { class = "^YandexMusic$" },
+
+    workspace = "10 silent",
+})
