@@ -1,7 +1,9 @@
 {
-  "android-sdk": "/home/lynx/data/android-sdk/",
+  "android-sdk": "/home/android/sdk/",
   "enable-web": false,
   "enable-macos-desktop": false,
   "enable-ios": false,
-  "enable-linux-desktop": true
+  "enable-linux-desktop": true,
+  "jdk-dir": "/usr/lib/jvm/java-17-openjdk",
+  "android-studio-dir": "/opt/android-studio/"
 }
