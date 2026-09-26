@@ -68,51 +68,52 @@ style = "bold fg:0"
 
 [git_branch]
 symbol = ""
-style = "bold fg:0"
+style = "bold fg:red"
 format = ' - [$symbol $branch]($style)'
 
 [git_status]
-format = '[$all_status$ahead_behind]($git_style) - '
+style = "fg:red"
+format = '[ $all_status$ahead_behind]($style)'
 
 [nodejs]
 symbol = ""
 style = "bg:color_red"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_green)]($style)'
+format = ' - [[ $symbol( $version) ](fg:color_fg0 bg:color_green)]($style)'
 
 [c]
 symbol = " "
 style = "bg:color_red"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_c)]($style)'
+format = ' - [[ $symbol( $version) ](fg:color_fg0 bg:color_c)]($style)'
 
 [cpp]
 symbol = " "
 style = "bg:color_red"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_c)]($style)'
+format = ' - [[ $symbol( $version) ](fg:color_fg0 bg:color_c)]($style)'
 
 [rust]
 symbol = ""
 # style = "bg:color_red"
-format = '[$symbol ($version) ]($style)'
+format = ' - [$symbol ($version) ]($style)'
 
 [kotlin]
 symbol = ""
 style = "bg:color_red"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_red)]($style)'
+format = ' - [[ $symbol( $version) ](fg:color_fg0 bg:color_red)]($style)'
 
 [python]
 symbol = ""
 # style = "bg:color_red"
-format = '[[ $symbol( $version) \($virtualenv\) ](fg:color_fg0 bg:color_yellow)]($style)'
+format = ' - [$symbol( $version) | $virtualenv]($style)'
 
 [dart]
 symbol = "🎯"
 # style = "bg:color_red"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:#0A5997)]($style)'
+format = ' - [[$symbol( $version)](fg:#2cb7f6)]($style)'
 
 [time]
 disabled = false
 time_format = "%r"
-# style = "bg:color_bg1"
+style = "bold fg:green"
 format = '[$time]($style)'
 
 [character]
