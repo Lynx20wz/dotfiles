@@ -1,20 +1,41 @@
 {
-  // Font
+  "lsp_highlight_debounce": 75,
+  "ui_font_weight": 400.0,
+  "buffer_line_height": "standard",
+  "diagnostics": {
+    "lsp_pull_diagnostics": {
+      "debounce_ms": 150,
+    },
+    "inline": {
+      "padding": 2,
+      "enabled": true,
+    },
+  },
+  "go_to_definition_fallback": "none",
+  "lsp_results_location": "picker",
+  "semantic_tokens": "combined",
+  "lsp_document_colors": "inlay",
+  "code_lens": "on",
   "project_panel": {
-    "dock": "left"
+    "hide_gitignore": true,
+    "hide_hidden": false,
+    "hide_root": true,
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "git_panel": {
     "tree_view": true,
-    "dock": "left"
+    "dock": "left",
   },
-  "ui_font_family": "Monaspace Argon NF",
-  "buffer_font_family": "Monaspace Argon NF",
+
+  // Font
+  "ui_font_family": "Monaspace Argon Frozen",
+  "buffer_font_family": "Monaspace Argon Frozen",
   "buffer_font_weight": 500.0,
   "ui_font_size": 14.0,
   "buffer_font_size": 18.0,
@@ -33,6 +54,7 @@
     "file_icons": true,
   },
   "inlay_hints": {
+    "show_type_hints": true,
     "show_value_hints": true,
     "show_background": false,
     "show_other_hints": true,
@@ -89,8 +111,8 @@
     "default_profile": "write",
     "default_model": {
       "enable_thinking": false,
-      "provider": "ollama",
-      "model": "qwen3.5:9b",
+      "provider": "llama.cpp",
+      "model": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M",
     },
     "favorite_models": [],
     "model_parameters": [],
@@ -98,7 +120,27 @@
 
   // Languages
   "languages": {
+  		"Typst": {
+			"inlay_hints": {
+    "show_background": false
+   },
+   "soft_wrap": "none",
+		},
+    "HTML": {
+      "document_symbols": "off",
+      "always_treat_brackets_as_autoclosed": true
+    },
+    "CSS": {
+      "tab_size": 2
+    },
+    "XML": {
+      "tab_size": 2,
+    },
     "Svelte": {
+      "indent_guides": {
+        "active_line_width": 3
+      },
+      "format_on_save": "on",
       "tab_size": 2,
     },
     "Markdown": {
@@ -106,7 +148,12 @@
       "tab_size": 4,
     },
     "Dart": {
+      "format_on_save": "on",
       "preferred_line_length": 100,
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll": true,
+      },
       "completions": {
         "words_min_length": 3,
       },
@@ -117,6 +164,9 @@
       "tab_size": 2,
     },
     "Python": {
+      "prettier": {
+        "allowed": false,
+      },
       "show_wrap_guides": true,
       "format_on_save": "on",
       "document_symbols": "on",
@@ -137,6 +187,38 @@
     },
   },
   "lsp": {
+		"tinymist": {
+			"initialization_options": {
+				"preview": {
+					"background": {
+						"enabled": true,
+						"color": "#000000"
+					},
+				},
+			},
+
+			"settings": {
+				"exportPdf": "onSave",
+				"outputPath": "$root/$name",
+				"formatterMode": "typstyle",
+			}
+		},
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "svelte": "html",
+        },
+        "experimental": {
+          "classRegex": [
+            "class=\"([^\"]*)\"",
+            "class='([^']*)'",
+            "class:\\s*([^\\s{]+)",
+            "\\{\\s*class:\\s*\"([^\"]*)\"",
+            "\\{\\s*class:\\s*'([^']*)'",
+          ],
+        },
+      },
+    },
     "rust-analyzer": {
       "initialization_options": {
         "completion": {
@@ -151,6 +233,26 @@
           },
         },
         "inlayHints": {
+          "parameterNames": {
+             "enabled": "all",
+             "suppressWhenArgumentMatchesName": false
+           },
+           "parameterTypes": {
+             "enabled": true
+           },
+           "variableTypes": {
+             "enabled": true,
+             "suppressWhenTypeMatchesName": false
+           },
+           "propertyDeclarationTypes": {
+             "enabled": true
+           },
+           "functionLikeReturnTypes": {
+             "enabled": true
+           },
+           "enumMemberValues": {
+             "enabled": true
+           },
           "maxLength": null,
           "lifetimeElisionHints": {
             "enable": "skip_trivial",
@@ -175,6 +277,13 @@
         },
       },
     },
+
+    "kotlin-lsp": {
+      "binary": {
+        "path": "/home/lynx/.local/share/zed/extensions/work/kotlin/kotlin-lsp-262.9593.0/kotlin-server-262.9593.0/bin/intellij-server",
+        "arguments": ["--stdio"],
+      },
+    },
   },
 
   // Others
@@ -186,12 +295,13 @@
   },
   "edit_predictions": {
     "codestral": {
-      "model": "codestral-latest"
+      "model": "codestral-latest",
     },
     "ollama": {
+      "api_url": "http://localhost:8080",
       "max_output_tokens": 32,
       "prompt_format": "qwen",
-      "model": "qwen3.5:9b"
+      "model": "qwen3.5:9b",
     },
     "mode": "eager",
     "provider": "zed",
@@ -201,6 +311,7 @@
     "metrics": false,
   },
   "terminal": {
+    "font_family": "Monaspace Argon",
     "alternate_scroll": "on",
     "scroll_multiplier": 3.0,
     "font_size": 22.0,
