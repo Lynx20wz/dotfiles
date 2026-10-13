@@ -1,4 +1,11 @@
 {
+  "cursor_animation": {
+    "enabled": true,
+  },
+  "feature_flags": {
+    "tabular-data-preview": "on",
+    "notebooks": "on",
+  },
   "lsp_highlight_debounce": 75,
   "ui_font_weight": 400.0,
   "buffer_line_height": "standard",
@@ -37,7 +44,7 @@
   "ui_font_family": "Monaspace Argon Frozen",
   "buffer_font_family": "Monaspace Argon Frozen",
   "buffer_font_weight": 500.0,
-  "ui_font_size": 14.0,
+  "ui_font_size": 13.0,
   "buffer_font_size": 18.0,
 
   // UI
@@ -120,25 +127,25 @@
 
   // Languages
   "languages": {
-  		"Typst": {
-			"inlay_hints": {
-    "show_background": false
-   },
-   "soft_wrap": "none",
-		},
+    "Typst": {
+      "inlay_hints": {
+        "show_background": false,
+      },
+      "soft_wrap": "none",
+    },
     "HTML": {
       "document_symbols": "off",
-      "always_treat_brackets_as_autoclosed": true
+      "always_treat_brackets_as_autoclosed": true,
     },
     "CSS": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "XML": {
       "tab_size": 2,
     },
     "Svelte": {
       "indent_guides": {
-        "active_line_width": 3
+        "active_line_width": 3,
       },
       "format_on_save": "on",
       "tab_size": 2,
@@ -187,22 +194,22 @@
     },
   },
   "lsp": {
-		"tinymist": {
-			"initialization_options": {
-				"preview": {
-					"background": {
-						"enabled": true,
-						"color": "#000000"
-					},
-				},
-			},
+    "tinymist": {
+      "initialization_options": {
+        "preview": {
+          "background": {
+            "enabled": true,
+            "color": "#000000",
+          },
+        },
+      },
 
-			"settings": {
-				"exportPdf": "onSave",
-				"outputPath": "$root/$name",
-				"formatterMode": "typstyle",
-			}
-		},
+      "settings": {
+        "exportPdf": "onSave",
+        "outputPath": "$root/$name",
+        "formatterMode": "typstyle",
+      },
+    },
     "tailwindcss-language-server": {
       "settings": {
         "includeLanguages": {
@@ -234,25 +241,25 @@
         },
         "inlayHints": {
           "parameterNames": {
-             "enabled": "all",
-             "suppressWhenArgumentMatchesName": false
-           },
-           "parameterTypes": {
-             "enabled": true
-           },
-           "variableTypes": {
-             "enabled": true,
-             "suppressWhenTypeMatchesName": false
-           },
-           "propertyDeclarationTypes": {
-             "enabled": true
-           },
-           "functionLikeReturnTypes": {
-             "enabled": true
-           },
-           "enumMemberValues": {
-             "enabled": true
-           },
+            "enabled": "all",
+            "suppressWhenArgumentMatchesName": false,
+          },
+          "parameterTypes": {
+            "enabled": true,
+          },
+          "variableTypes": {
+            "enabled": true,
+            "suppressWhenTypeMatchesName": false,
+          },
+          "propertyDeclarationTypes": {
+            "enabled": true,
+          },
+          "functionLikeReturnTypes": {
+            "enabled": true,
+          },
+          "enumMemberValues": {
+            "enabled": true,
+          },
           "maxLength": null,
           "lifetimeElisionHints": {
             "enable": "skip_trivial",
@@ -270,14 +277,6 @@
         "arguments": ["dart", "language-server", "--protocol=lsp"],
       },
     },
-    "ruff": {
-      "initialization_options": {
-        "format": {
-          "quote-style": "single",
-        },
-      },
-    },
-
     "kotlin-lsp": {
       "binary": {
         "path": "/home/lynx/.local/share/zed/extensions/work/kotlin/kotlin-lsp-262.9593.0/kotlin-server-262.9593.0/bin/intellij-server",
