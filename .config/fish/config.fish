@@ -1,7 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 # == Aliases ==
 
 # commands
@@ -32,6 +28,7 @@ alias lg="lazygit"
 alias rm="trash"
 alias ls="lsd"
 alias cat="bat"
+alias py="python"
 
 # == Functions ==
 function gaw -d "Get active window information with delay"
