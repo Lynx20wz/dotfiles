@@ -120,25 +120,7 @@ hl.animation({ leaf = "windowsIn", enabled = true, speed = 3.0, bezier = "easeOu
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.5, bezier = "linear", style = "popin 0%" })
 hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.5, bezier = "easeOutQuint", style = "slide" })
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.5, bezier = "easeOutQuint", style = "slide" })
-hl.animation({ leaf = "windowsMove", enabled = true, speed = 1.0, bezier = "overshoot"})
-
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name        = "no-gaps-f1",
---     match       = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 1.0, bezier = "overshoot" })
 
 hl.workspace_rule({ workspace = "1", monitor = "DP-3", default = true })
 hl.workspace_rule({ workspace = "9", monitor = "DP-2", default = true })

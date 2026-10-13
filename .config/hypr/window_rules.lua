@@ -1,7 +1,7 @@
 local pipWidth = 700
 local pipHeight = pipWidth / 1.7784
 
-hl.workspace_rule({ workspace = "9", layout = "master",  })
+hl.workspace_rule({ workspace = "9", layout = "master", })
 
 
 hl.window_rule({
@@ -9,7 +9,6 @@ hl.window_rule({
     name     = "fix-xwayland-drags",
     match    = {
         class      = "^$",
-        title      = "^$",
         xwayland   = true,
         float      = true,
         fullscreen = false,
@@ -48,22 +47,29 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "8th workspace",
-    match = { class = "^(md\\.obsidian\\.Obsidian|superproductivity)$" },
+    name = "TG Media viewer",
+    match = { title = "^Media viewer$" },
+    fullscreen = true,
+    float = true,
+})
+
+hl.window_rule({
+    name      = "8th workspace",
+    match     = { class = "^(md\\.obsidian\\.Obsidian|superproductivity|org\\.mozilla\\.Thunderbird)$" },
 
     workspace = "8 silent",
 })
 
 hl.window_rule({
-    name  = "9th workspace",
-    match = { class = "^(com\\.ayugram\\.desktop|vesktop|firefox)$" },
+    name      = "9th workspace",
+    match     = { class = "^(com\\.ayugram\\.desktop|vesktop|firefox)$" },
 
     workspace = "9",
 })
 
 hl.window_rule({
-    name  = "10th workspace",
-    match = { class = "^YandexMusic$" },
+    name      = "10th workspace",
+    match     = { class = "^YandexMusic$" },
 
     workspace = "10 silent",
 })

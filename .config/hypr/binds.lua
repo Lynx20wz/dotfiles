@@ -2,7 +2,7 @@ local mainMod      = "SUPER"
 local terminal     = "kitty"
 local fileManager  = "dolphin"
 local menu         = "rofi"
-local editor       = "zeditor"
+local editor       = "gram"
 local browser      = "firefox"
 
 local hyprshutdown = hl.bind(mainMod .. " + M",
